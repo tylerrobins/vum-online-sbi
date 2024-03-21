@@ -1,0 +1,16 @@
+Category,Option,Total Premium,Stock & Cont. Limit,Stock & Cont. Prem,BAR Limit,BAR Prem,PA Limit,PA Prem,PL Limit,PL Prem,SASRIA Limit,SASRIA Prem,Cover Notes
+Trader,Trader Bronze, R 70 ," R 40,000 ", R 50 , R -   , R -   ," R 25,000 ", R 15 ,,," R 500,000 ", R 5 ,
+Trader,Trader Silver, R 100 ," R 40,000 ", R 50 ," R 2,500 ", R 30 ," R 25,000 ", R 15 ,,," R 500,000 ", R 5 ,BAR - one specified item
+Trader,Trader Gold, R 150 ," R 75,000 ", R 75 ," R 5,000 ", R 55 ," R 25,000 ", R 15 ,,," R 500,000 ", R 5 ,BAR - one specified item
+Trader,Trader Platinum, R 220 ," R 100,000 ", R 85 ," R 5,000 ", R 55 ," R 50,000 ", R 25 ," R 250,000 ", R 50 ," R 500,000 ", R 5 ,BAR - one specified item
+Trader,Trader Diamond, R 300 ," R 150,000 ", R 120 ," R 5,000 ", R 55 ," R 50,000 ", R 25 ," R 500,000 ", R 95 ," R 500,000 ", R 5 ,BAR - one specified item
+Artisan,Artisan Bronze, R 70 ," R 10,000 ", R 15 ," R 3,000 ", R 35 ," R 25,000 ", R 15 ,,," R 500,000 ", R 5 ,BAR - one specified item
+Artisan,Artisan Silver, R 100 ," R 20,000 ", R 25 ," R 5,000 ", R 55 ," R 25,000 ", R 15 ,,," R 500,000 ", R 5 ,BAR - one specified item
+Artisan,Artisan Gold, R 150 ," R 20,000 ", R 25 ," R 5,000 ", R 55 ," R 25,000 ", R 15 ," R 250,000 ", R 50 ," R 500,000 ", R 5 ,BAR - one specified item
+Artisan,Artisan Platinum, R 220 ," R 30,000 ", R 30 ," R 10,000 ", R 110 ," R 50,000 ", R 25 ," R 250,000 ", R 50 ," R 500,000 ", R 5 ,"BAR - two specified items at R5k each, with an option being General All Risks at R5k"
+Artisan,Artisan Diamond, R 300 ," R 40,000 ", R 45 ," R 15,000 ", R 140 ," R 50,000 ", R 25 ," R 500,000 ", R 85 ," R 500,000 ", R 5 ,"BAR - three specified items at R5k each, or with options also being General All Risks at R5k or R10k"
+Services,Services Bronze, R 70 ," R 10,000 ", R 15 ," R 3,000 ", R 35 ," R 25,000 ", R 15 ,,," R 500,000 ", R 5 ,BAR - one specified item
+Services,Services Silver, R 100 ," R 20,000 ", R 25 ," R 5,000 ", R 55 ," R 25,000 ", R 15 ,,," R 500,000 ", R 5 ,BAR - one specified item
+Services,Services Gold, R 150 ," R 20,000 ", R 25 ," R 5,000 ", R 55 ," R 25,000 ", R 15 ," R 250,000 ", R 50 ," R 500,000 ", R 5 ,BAR - one specified item
+Services,Services Platinum, R 220 ," R 30,000 ", R 30 ," R 10,000 ", R 110 ," R 50,000 ", R 25 ," R 250,000 ", R 50 ," R 500,000 ", R 5 ,"BAR - two specified items at R5k each, with an option being General All Risks at R5k"
+Services,Services Diamond, R 300 ," R 40,000 ", R 45 ," R 15,000 ", R 140 ," R 50,000 ", R 25 ," R 500,000 ", R 85 ," R 500,000 ", R 5 ,"BAR - three specified items at R5k each, or with options also being General All Risks at R5k or R10k"
