@@ -1,0 +1,240 @@
+html, body {
+    height: 100%; /* Make sure html and body take full viewport height */
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+  }
+  
+  body {
+      background: #f7f7f7; /* Light grey background */
+      font-family: 'Arial', sans-serif; /* Use a modern font */
+      display: flex; /* Use the flexbox model */
+      justify-content: center;
+      align-items: center; /* Add this line for vertical centering */
+      min-height: 100vh; /* Use viewport height to ensure full height */
+  }
+  
+  .all-question-container {
+      max-width: 400px; /* Limit form width for larger screens */
+      width: 80vw;
+      background: white; /* White form background */
+      padding: 20px; /* Padding around form content */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow around form */
+      border-radius: 8px; /* Rounded corners on form */
+  }
+  
+  .header-container{
+    text-align: center;
+  }
+  .header-container img{
+    width: 75%;
+  }
+  
+  .header-container h1{
+    font-size: 55px;
+  }
+  
+  .header-container hr{
+    font-weight: 800;
+    margin: 20px 0;
+  }
+  
+  /* Hide all question containers by default */
+  .question-container {
+    display: none;
+    margin-bottom: 10px; /* Add some space at the bottom of each question */
+  }
+  
+  /* Only display the active question container */
+  .question-container.active {
+    display: block; /* You can change this to 'flex' if you need a flexible layout */
+  }
+  
+  .question-container label {
+    text-align: center;
+      display: block; /* Ensure the label is on its own line */
+      margin-bottom: 7px; /* Small margin between label and input */
+  }
+  .question-container input[type=text],
+  .question-container select,
+  .question-container input[type=tel],
+  .question-container textarea {
+      width: 100%; /* Full width inputs */
+      padding: 10px; /* Padding inside inputs */
+      margin-bottom: 10px; /* Space after inputs */
+      background-color: #f0f0f0af;
+      border: 1px solid #ffc222; /* Subtle border around inputs */
+      border-radius: 4px; /* Rounded corners on inputs */
+      box-sizing: border-box; /* Ensure inputs don't break out of flexbox */
+      font-family: inherit;
+      font-size: inherit;
+  }
+  
+  /* Style for radio buttons and checkboxes */
+  .question-container input[type=radio],
+  .question-container input[type=checkbox] {
+      margin-right: 5px; /* Space to the right of the radio button/checkbox */
+  }
+  
+  .question-container select{
+    font-family: inherit;
+    font-size: inherit;
+    background-color: f0f0f0af;
+  }
+  
+  /* Hide the radio button visually but remain accessible for screen readers */
+  .single-select-checkbox input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    left: -9999px;
+  }
+  
+  .single-select-checkbox {
+    text-align: center;
+  }
+  
+  /* Style the label */
+  .single-select-checkbox label {
+    display: inline-block;
+    width: calc(50% - 35px);
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: #f0f0f0af;
+    border: 1px solid #ffc222;;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    font-size: 1em;
+  }
+  
+  /* Style the label when the radio button is checked */
+  .single-select-checkbox input[type="radio"]:checked + label {
+    background-color: #ffc222;
+    border-color: #ffc222;
+    color: black;
+  }
+  
+  /* Optional: add a hover effect for labels */
+  .single-select-checkbox label:hover {
+    background-color: #0057b33a;
+  }
+  
+  button {
+    padding: 7px 15px; /* Larger click area for buttons */
+    background-color: #013a81; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-right: 5px; /* Space between buttons */
+    font-size: 1.2em;
+    min-width: 105px;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .btn-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .btn-container #next_btn {
+    margin-left: auto;
+  }
+  .btn-container #prev_btn, #submit_btn{
+    display: none;
+  }
+  
+  /* Link styled button */
+  .link-style-button {
+    display: block;
+    background: none;
+    border: none;
+    color: #013a81;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-family: inherit;
+    padding: 0;
+    margin: 0 auto 10px auto;
+  }
+  
+  .link-style-button:hover,
+  .link-style-button:focus {
+    text-decoration: none;
+    color: darkblue;
+  }
+  
+  
+  /* The Modal (background) */
+  .cover-options-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  /* Modal Content */
+  .cover-options-modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;  
+    height: 70%;
+    box-sizing: border-box;
+    margin: 15vh auto;
+    padding: 0 20px;
+    background-color: #fefefe;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 1px solid #bdbdbd;  /* This line adds a black border around the modal content */
+  }
+  
+  .option_div{
+    margin-bottom: -5px;
+  }
+  
+  .option_div hr{
+    width: 130%;
+    margin: 0 -7vw;
+  }
+  
+  .option-name{
+    font-size: 7vw;
+    text-align: center;
+    margin: -5px 0;
+    font-style: inherit;
+  }
+  
+  .option-price{
+    font-size: 5vw;
+    text-align: center;
+    font-style: inherit;
+    margin: 10px 0;
+  }
+  
+  .option-desc{
+    font-size: 3vw;
+    font-style: inherit;
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .device-info{
+    display: none;
+  }
+  
+  @media screen and (max-width: 900px) {
+    .header-container h1{
+      font-size: 6vw;
+    }
+  }

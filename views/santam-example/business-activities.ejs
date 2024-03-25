@@ -1,0 +1,17 @@
+<%- include('header') %>
+<body>
+    <h1>TEST</h1>
+    <form action="/<%= channelName.route %>/business-activities" method="POST">
+        <label for="bisActDropdown">Choose a Business Activity:</label>
+        <select id="bisAct" name="bisAct">
+            <!-- Iterate through the key's of the obj -->
+            <% Object.keys(bisActsByType).forEach((key) => { %>
+                <option value="<%= key %>"><%= key %></option>
+            <% }) %>
+        </select>
+        <!-- Add cell-number parameter to the form -->
+        <input name="cell-number" id="cell-number" value="<%= cellNumber %>" hidden>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

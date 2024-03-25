@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>VUM - Index's</title>
 </head>
+
 <body>
-    
+    <% Object.entries(avaliableRoutes).forEach(([key, value]) => { %>
+        <h2><%= value.title %></h2>
+        <ul>
+            <li>Method: <%= value.method %></li>
+            <li>Description: <%= value.description %></li>
+            <% if (value.route != '') { %>
+            <li>Route: <a href="<%= value.route %>"><%= value.route %></a></li>
+            <% } %>
+        </ul>
+    <% }) %>
 </body>
+
 </html>

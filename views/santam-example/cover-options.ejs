@@ -1,0 +1,20 @@
+<%- include('header') %>
+
+<body>
+    <form action="/<%= channelName.route %>/cover-options" method="POST">
+        <div class="cover-options-class">
+            <% for (let i=0; i < coverOpts.length; i++) { %>
+                <input type="radio" id="<%= coverOpts[i].option.coverName %>" name="coverOpt"
+                    value="<%= coverOpts[i].option.coverName %>">
+                <label for="<%= coverOpts[i].option.coverName %>">
+                    <%= coverOpts[i].option.coverName %>
+                </label><br>
+                <% } %>
+        </div>
+        <input name="cell-number" id="cell-number" value="<%= cellNumber %>" hidden>
+        <input name="business-activity" id="business-activity" value="<%= bisAct %>" hidden>
+        <input name="business-type" id="business-type" value="<%= bisType %>" hidden>
+        <button type="submit">Get Covered Today!</button>
+    </form>
+</body>
+</html>

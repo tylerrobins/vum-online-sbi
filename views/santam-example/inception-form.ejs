@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/form.css">
+    <title>INCEPTION</title>
+</head>
+
+<body>
+    <div id="all-quesiton-container" class="all-question-container">
+        <div class="header-container">
+            <img id="santamLogo" src="imgs/Logo.png" alt="Santam Logo">
+            <h1>Emerging Business Insurance</h1>
+            <hr>
+        </div>
+        <form id="inception-form">
+            <!-- Get clients personal infomation -->
+            <div id="page1" class="question-container active">
+                <div id="question1">
+                    <label for="first_name">What is your first name?</label>
+                    <input type="text" name="first_name" id="first_name" required>
+                </div>
+                <div id="question2">
+                    <label for="last_name">What is your last name?</label>
+                    <input type="text" name="last_name" id="last_name" required>
+                </div>
+                <div id="question3">
+                    <input type="tel" pattern="\+?\d*" name="cell_number" id="cell_number" value="<%= cellNumber %>"
+                        hidden>
+                </div>
+                <div id="question4">
+                    <input type="text" name="cover-option" id="cover-option" value="<%= coverOpt %>" hidden>
+                </div>
+                <label>Are you a South African Citizen?</label>
+                <div class="single-select-checkbox" id="question5">
+                    <input type="radio" id="sa_citizen" name="citizenship" value="sa_citizen">
+                    <label for="sa_citizen">Yes</label>
+                    <input type="radio" id="foreign_citizen" name="citizenship" value="foreign_citizen">
+                    <label for="foreign_citizen">No</label>
+                </div>
+                <div id="question6">
+                    <label for="id_number" id="id_number_label">What is your ID number?</label>
+                    <input type="text" inputmode="numeric" pattern="\d*" name="id_number" id="id_number" required>
+                </div>
+            </div>
+
+            <!-- business informaiton -->
+            <div id="page2" class="question-container">
+                <div>
+                    <label for="business_name">What is your business name?</label>
+                    <input type="text" name="business_name" id="business_name" required>
+                </div>
+                <div>
+                    <label for="business_address">What is your business address?</label>
+                    <input type="text" name="business_address" id="business_address" required>
+                </div>
+            </div>
+
+            <!-- Policy information -->
+            <div id="page3" class="question-container">
+                <div>
+                    <label for="inception_date">When would you like your policy to start?</label>
+                    <select name="inception_date" id="inception_date" required>
+                        <option value="" selected disabled>Select an Inception Date</option>
+                        <option value="<%- currentDate %>"><%- currentDate %></option>
+                        <option value="<%- tomorrowDate %>"><%- tomorrowDate %></option>
+                        <option value="<%- firstNextMonth %>"><%- firstNextMonth %></option>
+                    </select>
+                </div>
+                <div class="device-info">
+                    <label for="device_make">What is the make of your cell phone you want to insure?</label>
+                    <input type="text" name="device_make" id="device_make">
+                </div>
+                <div class="device-info">
+                    <label for="device_model">What is the model of your cell phone you want to insure?</label>
+                    <input type="text" name="device_model" id="device_model">
+                </div>
+            </div>
+        </form>
+        <div class="btn-container">
+            <button id="prev_btn">Previous</button>
+            <button id="next_btn">Next</button>
+            <button id="submit_btn">Submit</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/inception-form.js"></script>
+</body>
