@@ -35,7 +35,7 @@ async function dataModels() {
                 paLmt: columns[7],
                 plLmt: columns[9],
                 sasriaLmt: columns[11],
-                coverNotes: columns[13]
+                coverNotes: cleanString(columns[13])
             }
         };
         if (!coverOptsByTypes[category]) { coverOptsByTypes[category] = []; }
@@ -56,6 +56,14 @@ async function dataModels() {
         });
     return { bisTypeActsObj, bisActs, coverOptsByTypes };
 }
+
+function cleanString(inputString) {
+    // Remove \" and \r from the string
+    // This targets the exact sequence of \ followed by " and removes them
+    // Also removes all carriage return characters
+    return inputString.replace(/\"/g, '').replace(/\r/g, '');
+}
+
 
 
 module.exports = dataModels;

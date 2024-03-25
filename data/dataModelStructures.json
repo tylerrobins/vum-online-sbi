@@ -1,6 +1,122 @@
 {
 	"bisTypeActsObj": {
-		"Trader": [
+		"desc": "This is the Business Object, it contains all the Business Activities by Type. With Type being the first key and the Business Activities being the values.",
+		"contains": {
+			"Trader": [
+				"Airtime Sales",
+				"Bakery",
+				"Butchery",
+				"Cell Phone Shop",
+				"Clothing Shop",
+				"Coffee Shop",
+				"Coffin Supplier",
+				"Fast Food Outlet",
+				"Florist",
+				"Fresh Produce Store",
+				"Furniture Shop",
+				"General Dealer",
+				"Hardware Store",
+				"Liquor Store",
+				"Livestock Retailer",
+				"Part and Spares Shop",
+				"Restaurant",
+				"Cosmetic Sales",
+				"School Tuck Shop",
+				"Second-hand Shop",
+				"Spaza Shop",
+				"Tavern"
+			],
+			"Artisan": [
+				"Aircon Services",
+				"Auto Electrician",
+				"Auto Refurbisher",
+				"Building Contractor",
+				"Carpentry",
+				"Electrician",
+				"Engineer",
+				"Fencing",
+				"Flooring Installation",
+				"Garden Services",
+				"Gas Installation",
+				"General Maintenance",
+				"Glass Fitment and Repair",
+				"Handyman",
+				"High-Pressure Cleaning",
+				"Landscaper",
+				"Locksmith",
+				"Motor Mechanic",
+				"Painting Contractor",
+				"Panel Beater",
+				"Paving",
+				"Plumbing",
+				"Pool Services",
+				"Refrigeration",
+				"Sound and AV Fitment",
+				"Sound Technician",
+				"Towing Service",
+				"Tyre Fitment Centre",
+				"Upholsterer",
+				"Waterproofing",
+				"Welder and Fabricator",
+				"Windscreen Fitment"
+			],
+			"Services": [
+				"Admin Services",
+				"Advertising Services",
+				"Audio Visual Production",
+				"Beauty Spa",
+				"Bed and Breakfast",
+				"Business Consultant",
+				"Car Wash",
+				"Catering Services",
+				"Cleaning Service",
+				"Couriers",
+				"Delivery",
+				"Design and Print",
+				"DJ",
+				"Driving School",
+				"Dry Cleaner",
+				"Education",
+				"Estate Agent",
+				"Events Coordinator",
+				"Fast Food Delivery",
+				"Feeding Scheme",
+				"Funeral Parlour",
+				"Furniture Mover",
+				"Graphic Designer",
+				"Guest Lodge",
+				"Gymnasium",
+				"Hair Extensions Sales",
+				"Hair Salon",
+				"Hiring Business",
+				"Insurance Broker",
+				"Internet Cafe",
+				"IT Services",
+				"Laundromat",
+				"Legal Services",
+				"Microlender",
+				"Mobile Car Wash",
+				"Mobile Kitchen",
+				"Musician",
+				"NGO",
+				"Pest Control",
+				"Photographer",
+				"Printing and Copying Services",
+				"Project Management",
+				"Publishing",
+				"Recruitment Agency",
+				"Removals",
+				"Rubble Removal",
+				"Tailor",
+				"Tour Operator",
+				"Waste Pickers",
+				"Waste Removal"
+			]
+		}
+	},
+	"bisActs": {
+		"desc": "This is a List of all the business activities",
+		"contains": [
 			"Airtime Sales",
 			"Bakery",
 			"Butchery",
@@ -22,9 +138,7 @@
 			"School Tuck Shop",
 			"Second-hand Shop",
 			"Spaza Shop",
-			"Tavern"
-		],
-		"Artisan": [
+			"Tavern",
 			"Aircon Services",
 			"Auto Electrician",
 			"Auto Refurbisher",
@@ -56,9 +170,7 @@
 			"Upholsterer",
 			"Waterproofing",
 			"Welder and Fabricator",
-			"Windscreen Fitment"
-		],
-		"Services": [
+			"Windscreen Fitment",
 			"Admin Services",
 			"Advertising Services",
 			"Audio Visual Production",
@@ -111,298 +223,195 @@
 			"Waste Removal"
 		]
 	},
-	"bisActs": [
-		"Airtime Sales",
-		"Bakery",
-		"Butchery",
-		"Cell Phone Shop",
-		"Clothing Shop",
-		"Coffee Shop",
-		"Coffin Supplier",
-		"Fast Food Outlet",
-		"Florist",
-		"Fresh Produce Store",
-		"Furniture Shop",
-		"General Dealer",
-		"Hardware Store",
-		"Liquor Store",
-		"Livestock Retailer",
-		"Part and Spares Shop",
-		"Restaurant",
-		"Cosmetic Sales",
-		"School Tuck Shop",
-		"Second-hand Shop",
-		"Spaza Shop",
-		"Tavern",
-		"Aircon Services",
-		"Auto Electrician",
-		"Auto Refurbisher",
-		"Building Contractor",
-		"Carpentry",
-		"Electrician",
-		"Engineer",
-		"Fencing",
-		"Flooring Installation",
-		"Garden Services",
-		"Gas Installation",
-		"General Maintenance",
-		"Glass Fitment and Repair",
-		"Handyman",
-		"High-Pressure Cleaning",
-		"Landscaper",
-		"Locksmith",
-		"Motor Mechanic",
-		"Painting Contractor",
-		"Panel Beater",
-		"Paving",
-		"Plumbing",
-		"Pool Services",
-		"Refrigeration",
-		"Sound and AV Fitment",
-		"Sound Technician",
-		"Towing Service",
-		"Tyre Fitment Centre",
-		"Upholsterer",
-		"Waterproofing",
-		"Welder and Fabricator",
-		"Windscreen Fitment",
-		"Admin Services",
-		"Advertising Services",
-		"Audio Visual Production",
-		"Beauty Spa",
-		"Bed and Breakfast",
-		"Business Consultant",
-		"Car Wash",
-		"Catering Services",
-		"Cleaning Service",
-		"Couriers",
-		"Delivery",
-		"Design and Print",
-		"DJ",
-		"Driving School",
-		"Dry Cleaner",
-		"Education",
-		"Estate Agent",
-		"Events Coordinator",
-		"Fast Food Delivery",
-		"Feeding Scheme",
-		"Funeral Parlour",
-		"Furniture Mover",
-		"Graphic Designer",
-		"Guest Lodge",
-		"Gymnasium",
-		"Hair Extensions Sales",
-		"Hair Salon",
-		"Hiring Business",
-		"Insurance Broker",
-		"Internet Cafe",
-		"IT Services",
-		"Laundromat",
-		"Legal Services",
-		"Microlender",
-		"Mobile Car Wash",
-		"Mobile Kitchen",
-		"Musician",
-		"NGO",
-		"Pest Control",
-		"Photographer",
-		"Printing and Copying Services",
-		"Project Management",
-		"Publishing",
-		"Recruitment Agency",
-		"Removals",
-		"Rubble Removal",
-		"Tailor",
-		"Tour Operator",
-		"Waste Pickers",
-		"Waste Removal"
-	],
 	"coverOptsByTypes": {
-		"Trader": [
-			{
-				"option": {
-					"coverName": "Trader Bronze",
-					"totalPremium": " R 70 ",
-					"stockContentLmt": "\" R 40",
-					"barLmt": " R 50 ",
-					"paLmt": " R -   ",
-					"plLmt": "000 \"",
-					"sasriaLmt": "",
-					"coverNotes": "\" R 500"
+		"desc": "This is the Cover Options Object, it contains all Cover Options by Type. The first key is the Type and the values are the Cover Options avaliable to that type.",
+		"contains": {
+			"Trader": [
+				{
+					"option": {
+						"coverName": "Trader Bronze",
+						"totalPremium": "70",
+						"stockContentLmt": "40000",
+						"barLmt": "",
+						"paLmt": "25000",
+						"plLmt": "",
+						"sasriaLmt": "500000",
+						"coverNotes": ""
+					}
+				},
+				{
+					"option": {
+						"coverName": "Trader Silver",
+						"totalPremium": "100",
+						"stockContentLmt": "40000",
+						"barLmt": "2500",
+						"paLmt": "25000",
+						"plLmt": "",
+						"sasriaLmt": "500000",
+						"coverNotes": "BAR - one specified item"
+					}
+				},
+				{
+					"option": {
+						"coverName": "Trader Gold",
+						"totalPremium": "150",
+						"stockContentLmt": "75000",
+						"barLmt": "5000",
+						"paLmt": "25000",
+						"plLmt": "",
+						"sasriaLmt": "500000",
+						"coverNotes": "BAR - one specified item"
+					}
+				},
+				{
+					"option": {
+						"coverName": "Trader Platinum",
+						"totalPremium": "220",
+						"stockContentLmt": "100000",
+						"barLmt": "5000",
+						"paLmt": "50000",
+						"plLmt": "250000",
+						"sasriaLmt": "500000",
+						"coverNotes": "BAR - one specified item"
+					}
+				},
+				{
+					"option": {
+						"coverName": "Trader Diamond",
+						"totalPremium": "300",
+						"stockContentLmt": "150000",
+						"barLmt": "5000",
+						"paLmt": "50000",
+						"plLmt": "500000",
+						"sasriaLmt": "500000",
+						"coverNotes": "BAR - one specified item"
+					}
 				}
-			},
-			{
-				"option": {
-					"coverName": "Trader Silver",
-					"totalPremium": " R 100 ",
-					"stockContentLmt": "\" R 40",
-					"barLmt": " R 50 ",
-					"paLmt": "500 \"",
-					"plLmt": "\" R 25",
-					"sasriaLmt": " R 15 ",
-					"coverNotes": ""
+			],
+			"Artisan": [
+				{
+					"option": {
+						"coverName": "Artisan Bronze",
+						"totalPremium": "70",
+						"stockContentLmt": "10000",
+						"barLmt": "3000",
+						"paLmt": "25000",
+						"plLmt": "",
+						"sasriaLmt": "500000",
+						"coverNotes": "BAR - one specified item"
+					}
+				},
+				{
+					"option": {
+						"coverName": "Artisan Silver",
+						"totalPremium": "100",
+						"stockContentLmt": "20000",
+						"barLmt": "5000",
+						"paLmt": "25000",
+						"plLmt": "",
+						"sasriaLmt": "500000",
+						"coverNotes": "BAR - one specified item"
+					}
+				},
+				{
+					"option": {
+						"coverName": "Artisan Gold",
+						"totalPremium": "150",
+						"stockContentLmt": "20000",
+						"barLmt": "5000",
+						"paLmt": "25000",
+						"plLmt": "250000",
+						"sasriaLmt": "500000",
+						"coverNotes": "BAR - one specified item"
+					}
+				},
+				{
+					"option": {
+						"coverName": "Artisan Platinum",
+						"totalPremium": "220",
+						"stockContentLmt": "30000",
+						"barLmt": "10000",
+						"paLmt": "50000",
+						"plLmt": "250000",
+						"sasriaLmt": "500000",
+						"coverNotes": "BAR - two specified items at R5k each"
+					}
+				},
+				{
+					"option": {
+						"coverName": "Artisan Diamond",
+						"totalPremium": "300",
+						"stockContentLmt": "40000",
+						"barLmt": "15000",
+						"paLmt": "50000",
+						"plLmt": "500000",
+						"sasriaLmt": "500000",
+						"coverNotes": "BAR - three specified items at R5k each"
+					}
 				}
-			},
-			{
-				"option": {
-					"coverName": "Trader Gold",
-					"totalPremium": " R 150 ",
-					"stockContentLmt": "\" R 75",
-					"barLmt": " R 75 ",
-					"paLmt": "000 \"",
-					"plLmt": "\" R 25",
-					"sasriaLmt": " R 15 ",
-					"coverNotes": ""
+			],
+			"Services": [
+				{
+					"option": {
+						"coverName": "Services Bronze",
+						"totalPremium": "70",
+						"stockContentLmt": "10000",
+						"barLmt": "3000",
+						"paLmt": "25000",
+						"plLmt": "",
+						"sasriaLmt": "500000",
+						"coverNotes": "BAR - one specified item"
+					}
+				},
+				{
+					"option": {
+						"coverName": "Services Silver",
+						"totalPremium": "100",
+						"stockContentLmt": "20000",
+						"barLmt": "5000",
+						"paLmt": "25000",
+						"plLmt": "",
+						"sasriaLmt": "500000",
+						"coverNotes": "BAR - one specified item"
+					}
+				},
+				{
+					"option": {
+						"coverName": "Services Gold",
+						"totalPremium": "150",
+						"stockContentLmt": "20000",
+						"barLmt": "5000",
+						"paLmt": "25000",
+						"plLmt": "250000",
+						"sasriaLmt": "500000",
+						"coverNotes": "BAR - one specified item"
+					}
+				},
+				{
+					"option": {
+						"coverName": "Services Platinum",
+						"totalPremium": "220",
+						"stockContentLmt": "30000",
+						"barLmt": "10000",
+						"paLmt": "50000",
+						"plLmt": "250000",
+						"sasriaLmt": "500000",
+						"coverNotes": "BAR - two specified items at R5k each"
+					}
+				},
+				{
+					"option": {
+						"coverName": "Services Diamond",
+						"totalPremium": "300",
+						"stockContentLmt": "40000",
+						"barLmt": "15000",
+						"paLmt": "50000",
+						"plLmt": "500000",
+						"sasriaLmt": "500000",
+						"coverNotes": "BAR - three specified items at R5k each"
+					}
 				}
-			},
-			{
-				"option": {
-					"coverName": "Trader Platinum",
-					"totalPremium": " R 220 ",
-					"stockContentLmt": "\" R 100",
-					"barLmt": " R 85 ",
-					"paLmt": "000 \"",
-					"plLmt": "\" R 50",
-					"sasriaLmt": " R 25 ",
-					"coverNotes": "000 \""
-				}
-			},
-			{
-				"option": {
-					"coverName": "Trader Diamond",
-					"totalPremium": " R 300 ",
-					"stockContentLmt": "\" R 150",
-					"barLmt": " R 120 ",
-					"paLmt": "000 \"",
-					"plLmt": "\" R 50",
-					"sasriaLmt": " R 25 ",
-					"coverNotes": "000 \""
-				}
-			}
-		],
-		"Artisan": [
-			{
-				"option": {
-					"coverName": "Artisan Bronze",
-					"totalPremium": " R 70 ",
-					"stockContentLmt": "\" R 10",
-					"barLmt": " R 15 ",
-					"paLmt": "000 \"",
-					"plLmt": "\" R 25",
-					"sasriaLmt": " R 15 ",
-					"coverNotes": ""
-				}
-			},
-			{
-				"option": {
-					"coverName": "Artisan Silver",
-					"totalPremium": " R 100 ",
-					"stockContentLmt": "\" R 20",
-					"barLmt": " R 25 ",
-					"paLmt": "000 \"",
-					"plLmt": "\" R 25",
-					"sasriaLmt": " R 15 ",
-					"coverNotes": ""
-				}
-			},
-			{
-				"option": {
-					"coverName": "Artisan Gold",
-					"totalPremium": " R 150 ",
-					"stockContentLmt": "\" R 20",
-					"barLmt": " R 25 ",
-					"paLmt": "000 \"",
-					"plLmt": "\" R 25",
-					"sasriaLmt": " R 15 ",
-					"coverNotes": "000 \""
-				}
-			},
-			{
-				"option": {
-					"coverName": "Artisan Platinum",
-					"totalPremium": " R 220 ",
-					"stockContentLmt": "\" R 30",
-					"barLmt": " R 30 ",
-					"paLmt": "000 \"",
-					"plLmt": "\" R 50",
-					"sasriaLmt": " R 25 ",
-					"coverNotes": "000 \""
-				}
-			},
-			{
-				"option": {
-					"coverName": "Artisan Diamond",
-					"totalPremium": " R 300 ",
-					"stockContentLmt": "\" R 40",
-					"barLmt": " R 45 ",
-					"paLmt": "000 \"",
-					"plLmt": "\" R 50",
-					"sasriaLmt": " R 25 ",
-					"coverNotes": "000 \""
-				}
-			}
-		],
-		"Services": [
-			{
-				"option": {
-					"coverName": "Services Bronze",
-					"totalPremium": " R 70 ",
-					"stockContentLmt": "\" R 10",
-					"barLmt": " R 15 ",
-					"paLmt": "000 \"",
-					"plLmt": "\" R 25",
-					"sasriaLmt": " R 15 ",
-					"coverNotes": ""
-				}
-			},
-			{
-				"option": {
-					"coverName": "Services Silver",
-					"totalPremium": " R 100 ",
-					"stockContentLmt": "\" R 20",
-					"barLmt": " R 25 ",
-					"paLmt": "000 \"",
-					"plLmt": "\" R 25",
-					"sasriaLmt": " R 15 ",
-					"coverNotes": ""
-				}
-			},
-			{
-				"option": {
-					"coverName": "Services Gold",
-					"totalPremium": " R 150 ",
-					"stockContentLmt": "\" R 20",
-					"barLmt": " R 25 ",
-					"paLmt": "000 \"",
-					"plLmt": "\" R 25",
-					"sasriaLmt": " R 15 ",
-					"coverNotes": "000 \""
-				}
-			},
-			{
-				"option": {
-					"coverName": "Services Platinum",
-					"totalPremium": " R 220 ",
-					"stockContentLmt": "\" R 30",
-					"barLmt": " R 30 ",
-					"paLmt": "000 \"",
-					"plLmt": "\" R 50",
-					"sasriaLmt": " R 25 ",
-					"coverNotes": "000 \""
-				}
-			},
-			{
-				"option": {
-					"coverName": "Services Diamond",
-					"totalPremium": " R 300 ",
-					"stockContentLmt": "\" R 40",
-					"barLmt": " R 45 ",
-					"paLmt": "000 \"",
-					"plLmt": "\" R 50",
-					"sasriaLmt": " R 25 ",
-					"coverNotes": "000 \""
-				}
-			}
-		]
+			]
+		}
 	}
 }

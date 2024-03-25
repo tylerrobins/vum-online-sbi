@@ -9,13 +9,12 @@ const port = process.env.PORT || 3000;
 
 async function startServer() {
     const { bisTypeActsObj, bisActs, coverOptsByTypes } = await dataModels();
-
-    generateAndLogDataStructure(bisTypeActsObj, bisActs, coverOptsByTypes);
+    // generateAndLogDataStructure(bisTypeActsObj, bisActs, coverOptsByTypes);
+    const router = require('./router')(bisTypeActsObj, bisActs, coverOptsByTypes);
 
     app.use(express.static('public'));
     app.use(express.static('public'));
 
-    const router = require('./router');
 
     app.set('views', path.join(__dirname, 'views'));
     app.set('view engine', 'ejs');
