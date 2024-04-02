@@ -76,10 +76,12 @@ function createRouter(channelInfo) {
     });
 
     router.get('/inception-form2', (req, res) => {
+        const inceptionDateOptions = dateOptionsController.getInceptionDateOptions();
         const cellNumber = req.query['cell-number'] || "";
         res.render(
             `${channelInfo.route}/inception-form2`,
             {
+                ...inceptionDateOptions,
                 cellNumber,
                 bisActsByType,
                 coverOptsByTypes,

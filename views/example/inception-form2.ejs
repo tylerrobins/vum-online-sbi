@@ -16,6 +16,7 @@
         </div>
         <div class="questions-form-container">
             <form action="">
+                <!-- BUSINESS DETAILS -->
                 <div id="page1" class="question-page-container active">
                     <h2>Business Details</h2>
                     <hr>
@@ -33,39 +34,40 @@
                         <select id="bisAct" name="bisAct">
                             <!-- SET DEFAULT -->
                             <option value="" disabled selected>Business Activity</option>
-                            <!-- Iterate through the key's of the obj -->
                             <% Object.keys(bisActsByType).forEach((key)=> { %>
                                 <option value="<%= key %>">
                                     <%= key %>
                                 </option>
                                 <% }) %>
                         </select>
-                        <!-- Add cell-number parameter to the form -->
                         <input name="cell-number" id="cell-number" value="<%= cellNumber %>" hidden>
                     </div>
                 </div>
+                <!-- COVER OPTIONS -->
                 <div id="page2" class="question-page-container">
                     <h2>Cover Options</h2>
                     <h4>Select an option to learn more</h4>
                     <hr>
-                    <div id="question4" class="question-container cover-options"></div>
+                    <!-- HTML WILL BE INSERT FROM JS FILE BASE ON BUSINESS ACTIVITY -->
+                    <div id="cover-options-div" class="question-container cover-options"></div>
                     <div class="cover-details"></div>
                 </div>
+                <!-- PERSONAL DETAILS -->
                 <div id="page3" class="question-page-container">
                     <h2>Personal Details</h2>
                     <hr>
-                    <div id="question5" class="question-container">
+                    <div id="first-name-div" class="question-container">
                         <label for="first_name">What is your first name?</label>
                         <input type="text" name="first_name" id="first_name" placeholder="First Name" required>
                     </div>
-                    <div id="question6" class="question-container">
+                    <div id="last-name-div" class="question-container">
                         <label for="last_name">What is your last name?</label>
                         <input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
                     </div>
-                    <div id="question7" class="question-container">
+                    <div id="sa-citizen-div" class="question-container">
                         <label>Are you a South African Citizen?</label>
                         <div class="two-radio-btn-container">
-                            <div class="single-select-checkbox"> 
+                            <div class="single-select-checkbox">
                                 <input type="radio" id="sa_citizen" name="citizenship" value="sa_citizen">
                                 <label for="sa_citizen">Yes</label>
                             </div>
@@ -75,13 +77,35 @@
                             </div>
                         </div>
                     </div>
-                    <div id="question8" class="question-container">
+                    <div id="id-passport-number-div" class="question-container">
                         <label for="id_number" id="id_number_label">What is your ID number?</label>
                         <input type="text" inputmode="numeric" pattern="\d*" name="id_number" id="id_number"
                             placeholder="ID Number" required>
                     </div>
                 </div>
-                <div id="question7" class="question-container">
+                <!-- Policy information -->
+                <div id="page4" class="question-page-container">
+                    <h2>Policy Details</h2>
+                    <hr>
+                    <div id="inception-date-div" class="question-container">
+                        <label for="inception_date">When would you like your policy to start?</label>
+                        <select name="inception_date" id="inception_date" required>
+                            <option value="" selected disabled>Select an Inception Date</option>
+                            <option value="<%- currentDate %>"><%- currentDate %></option>
+                            <option value="<%- tomorrowDate %>"><%- tomorrowDate %></option>
+                            <option value="<%- firstNextMonth %>"><%- firstNextMonth %></option>
+                        </select>
+                    </div>
+                    <div id="device-make-div" class="question-container device-info">
+                        <label for="device_make">What is the device make?</label>
+                        <input type="text" name="device_make" id="device_make" placeholder="Device Make">
+                    </div>
+                    <div id="device-model-div" class="question-container device-info">
+                        <label for="device_model">What is the device model?</label>
+                        <input type="text" name="device_model" id="device_model" placeholder="Device Model">
+                    </div>
+                </div>
+                <div id="cell-number-div" class="question-container">
                     <input type="tel" pattern="\+?\d*" name="cell_number" id="cell_number" value="<%= cellNumber %>"
                         hidden>
                 </div>

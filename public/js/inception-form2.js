@@ -1,14 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM Loaded');
     const bisActsByTypeInput = document.getElementById('bisActsByType').value;
     const coverOptsByTypesInput = document.getElementById('coverOptsByTypes').value;
     const bisActsByType = JSON.parse(bisActsByTypeInput);
     const coverOptsByTypes = JSON.parse(coverOptsByTypesInput);
 
-    const coverOptionContainer = document.querySelector('.cover-options');
-
-    let coverOptionSelected = '';
-    let currentQuestion = 1;
+    let coverOptionSelection = '';
+    let barLmt = '';
+    let currentPage = 1;
 
     const buttons = {
         prevBtn: document.getElementById('prev_btn'),
@@ -16,23 +14,30 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn: document.getElementById('submit_btn'),
     };
 
+    const pagesQuestions = {
+
+    };
+
     buttons.prevBtn.addEventListener('click', () => {
-        currentQuestion = updateQuestionPage(buttons, currentQuestion, -1);
+        currentPage = updateQuestionPage(buttons, currentPage, -1);
     });
     buttons.nextBtn.addEventListener('click', () => {
-        // hasAnsweredAllQuestions(currentQuestion) && updateQuestion(1); //UNCOMMENT FOR LIVE
-        if (currentQuestion === 1) { updateCoverOptions(coverOptionSelected) }
-        currentQuestion = updateQuestionPage(buttons, currentQuestion, 1); //ADDED FOR TESTING, REMOVE FOR LIVE
+        // hasAnsweredAllQuestions(currentPage) && updateQuestion(1); //UNCOMMENT FOR LIVE
+        if (currentPage === 1) {
+            updateCoverOptions(coverOptionSelection, (selectedBarLmt) => {
+                barLmt = selectedBarLmt;
+            });
+        }
+        if (currentPage === 3) { updateDeviceInfoBaseOnCover(barLmt); }
+        currentPage = updateQuestionPage(buttons, currentPage, 1); //ADDED FOR TESTING, REMOVE FOR LIVE
     });
-
     // buttons.submitBtn.addEventListener('click', () => {
-    //     hasAnsweredAllQuestions(currentQuestion) && submitForm();
+    //     hasAnsweredAllQuestions(currentPage) && submitForm();
     // });
 
     const bisActDropdown = document.getElementById('bisAct');
-
     bisActDropdown.addEventListener('change', function () {
-        coverOptionSelected = coverOptsByTypes[bisActsByType[this.value]];
+        coverOptionSelection = coverOptsByTypes[bisActsByType[this.value]];
     });
 
     document.querySelectorAll('.single-select-checkbox input[type="radio"]').forEach(radio => {
@@ -40,20 +45,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function updateQuestionPage(btn, currentQuestion, direction) {
-    document.getElementById('page' + currentQuestion).style.display = 'none';
-    currentQuestion += direction;
-    document.getElementById('page' + currentQuestion).style.display = 'block';
+// NEXT, PREV, SUBMIT BUTTON HANDLER - TO CHANGE PAGES
+function updateQuestionPage(btn, currentPage, direction) {
+    document.getElementById('page' + currentPage).style.display = 'none';
+    currentPage += direction;
+    document.getElementById('page' + currentPage).style.display = 'block';
 
     // Adjust button visibility based on the next page number
-    btn.prevBtn.style.display = currentQuestion === 1 ? 'none' : 'block';
-    btn.nextBtn.style.display = currentQuestion === 3 ? 'none' : 'block';
-    btn.submitBtn.style.display = currentQuestion === 3 ? 'block' : 'none';
+    btn.prevBtn.style.display = currentPage === 1 ? 'none' : 'block';
+    btn.nextBtn.style.display = currentPage === 4 ? 'none' : 'block';
+    btn.submitBtn.style.display = currentPage === 4 ? 'block' : 'none';
 
-    return currentQuestion;
+    return currentPage;
 }
 
-function updateCoverOptions(coverOpts) {
+// BUILDS THE COVER OPTIONS
+// MAIN FUNCTION THAT RUNS
+function updateCoverOptions(coverOpts, onSelection) {
+    let barLmt = '';
     const container = document.querySelector('.cover-options');
     const detailsContainer = document.querySelector('.cover-details'); // Assume there's a container for details
     container.innerHTML = '';
@@ -89,16 +98,28 @@ function updateCoverOptions(coverOpts) {
                         radioInput.checked = false;
                         element.dataset.selected = 'false';
                         restoreOriginalOrder(elements, container);
-                        detailsContainer.innerHTML = ''; // Clear details when deselected
+                        detailsContainer.innerHTML = '';
+                        barLmt = '';
+                        element.querySelector('label').classList.remove('selected');
                     } else {
                         elements.forEach(el => {
                             if (el !== element) el.style.display = 'none';
                         });
                         container.prepend(element);
                         element.dataset.selected = 'true';
-                        displayCoverDetails(opt.option, detailsContainer); // Display details of the selected cover
+                        displayCoverDetails(opt.option, detailsContainer);
+                        for (let i = 0; i < coverOpts.length; i++) {
+                            if (coverOpts[i].option.coverName === coverName) {
+                                barLmt = coverOpts[i].option.barLmt;
+                            }
+                        };
+                        element.querySelector('label').classList.add('selected');
                     }
+                    onSelection(barLmt);
                 } else {
+                    elements.forEach(el => {
+                        el.querySelector('label').classList.remove('selected');
+                    });
                     restoreOriginalOrder(elements, container);
                 }
             });
@@ -107,7 +128,7 @@ function updateCoverOptions(coverOpts) {
         container.textContent = 'No cover options available for the selected business activity.';
     }
 }
-
+// RESTORES THE ORIGINAL ORDER OF THE COVER OPTIONS ON DESELECT
 function restoreOriginalOrder(elements, container) {
     container.innerHTML = '';
     elements.forEach(el => {
@@ -116,7 +137,7 @@ function restoreOriginalOrder(elements, container) {
         el.dataset.selected = 'false';
     });
 }
-
+// BUILDS THE DETAILS OF THE SELECTED COVER OPTION
 function displayCoverDetails(option, container) {
     const table = document.createElement('table');
     table.classList.add('cover-details-table');
@@ -127,8 +148,9 @@ function displayCoverDetails(option, container) {
         const row = table.insertRow();
         const keyCell = row.insertCell();
         keyCell.textContent = key;
+        keyCell.classList.add('cover-details-key');
         const valueCell = row.insertCell();
-        valueCell.textContent = value;
+        valueCell.textContent = processAmountsToString(value);
     });
 
     container.appendChild(table);
@@ -146,9 +168,33 @@ function displayCoverDetails(option, container) {
     }
 }
 
+// HANDLES CITIZENSHIP - SA = ID, FOREIGN = PASSPORT
 function idPassportLabelHandler() {
     const label = document.getElementById('id_number_label');
     label.textContent = this.id === 'sa_citizen' ? 'What is your ID number?' : 'What is your Passport Number?';
     const idNumber = document.getElementById('id_number');
     idNumber.placeholder = this.id === 'sa_citizen' ? 'ID Number' : 'Passport Number';
 }
+
+// SHOWS OR HIDES COVER DETAILS BASE ON COVER OPTIONS
+function updateDeviceInfoBaseOnCover(barLmtVar) {
+    // SELECT device-info Class
+    const deviceInfo = document.querySelectorAll('.device-info');
+    if (barLmtVar === '' || barLmtVar === '0' || barLmtVar === 0) {
+        for (let i = 0; i < deviceInfo.length; i++) {
+            deviceInfo[i].style.display = 'none';
+        }
+    } else {
+        for (let i = 0; i < deviceInfo.length; i++) {
+            deviceInfo[i].style.display = 'flex';
+        }
+    }
+}
+
+    // HELPER FUNCTIONS
+    // CONVERTS AMOUNTS TO RAND STRING
+    function processAmountsToString(amount) {
+        let result = amount.toString();
+        result = result.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        return 'R ' + result;
+    }

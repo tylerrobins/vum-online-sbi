@@ -165,13 +165,11 @@ h1 {
     align-items: center;
     justify-content: center;
 }
-
 .cover-options input[type="radio"] {
     opacity: 0;
     position: absolute;
     left: -9999px;
 }
-
 .cover-options label {
     position: relative;
     width: 100%;
@@ -186,24 +184,37 @@ h1 {
     font-size: 1.2em;
     color: var(--primary-color);
 }
-
 .cover-options input[type="radio"]:checked+label {
     background-color: var(--secondary-color);
     border-color: VAR(--secondary-color);
 }
-
 .cover-options label:hover {
     background-color: #0057b33a;
 }
-
 .cover-options label::after {
     content: "⌄";
     position: absolute;
     right: 10px;
-    top: 40%;
+    top: 35%;
     transform: translateY(-50%);
     font-size: 1em;
     color: inherit;
+}
+.cover-options label.selected::after {
+    content: "x";
+    position: absolute;
+    right: 10px;
+    top: 45%;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: inherit;
+}
+
+.cover-details {
+    padding-left: 15px;
+}
+.cover-details-key {
+    padding-right: 50px;
 }
 
 /* SINGLE SELECTION 2 RADIO BUTTONS - CITIZENSHIP */
@@ -214,7 +225,6 @@ h1 {
     height: 45px;
     margin-bottom: 10px;
 }
-
 .single-select-checkbox {
     display: flex;
     justify-content: space-between;
@@ -229,30 +239,31 @@ h1 {
     color: var(--primary-color);
     width: 40vw;
 }
-
 .single-select-checkbox input[type="radio"] {
     opacity: 0;
     position: absolute;
     left: -9999px;
 }
-
 .single-select-checkbox label {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 100%;
     font-weight: 600;
     font-size: 1.2em;
     margin: 0;
 }
-
-
 .single-select-checkbox input[type="radio"]:checked+label {
     background-color: #ffc222;
     border-color: #ffc222;
     color: black;
 }
 
+/* DEVICE INFO */
+.device-info {
+    display: none;
+}
 
 /* PREVIOUS, NEXT, SUBMIT */
 .btn-container {
@@ -274,16 +285,18 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin: 5px 5px 15px 5px;
+    margin: 25px 5px 15px 5px;
     font-size: 1.2em;
-    width: 40vw;
+    width: 41vw;
     height: 100%;
+    padding: 0;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
+/* ADDITIONAL CLASSES */
 .hidden {
     display: none;
 }
@@ -306,6 +319,21 @@ button:hover {
     }
 }
 
+@media screen and (max-width: 295px){
+    .cover-option-div{
+        height: 65px;
+    }
+    .cover-options label{
+        padding-right: 60px;
+    }
+}
+
+@media screen and (max-width: 238px) {
+    .cover-options label{
+        padding-right: 22px;
+    }
+}
+
 @media screen and (max-width:380px) {
     .header-container {
         width: 90%;
@@ -320,7 +348,7 @@ button:hover {
     }
 }
 
-@media screen and (min-width: 785px) {
+@media screen and (min-width: 780px) {
     .questions-form-container {
         margin: 0 auto 23.4px auto;
         width: 700px;
@@ -328,6 +356,11 @@ button:hover {
 
     .question-page-container {
         width: 700px;
+    }
+
+    .two-radio-btn-container {
+        width: 650px;
+        margin: auto;
     }
 
     .single-select-checkbox {
@@ -364,6 +397,4 @@ button:hover {
     .cover-options {
         margin: 21.75px 0 0 25px;
     }
-
-    .single-select-checkbox {}
 }
