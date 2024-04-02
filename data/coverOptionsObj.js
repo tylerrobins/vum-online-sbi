@@ -4,60 +4,60 @@ const coverOptsByTypes = {
             "option": {
                 "coverName": "Trader Bronze",
                 "totalPremium": "70",
-                "stockContentLmt": "40000",
+                "Stock & Content Limit": "40000",
                 "barLmt": "",
-                "paLmt": "25000",
-                "plLmt": "",
-                "sasriaLmt": "500000",
-                "coverNotes": ""
+                "Personal Accident": "25000",
+                "Public Liability": "",
+                "Sarsia Cover Limit": "500000",
+                "Cover Note": ""
             }
         },
         {
             "option": {
                 "coverName": "Trader Silver",
                 "totalPremium": "100",
-                "stockContentLmt": "40000",
+                "Stock & Content Limit": "40000",
                 "barLmt": "2500",
-                "paLmt": "25000",
-                "plLmt": "",
-                "sasriaLmt": "500000",
-                "coverNotes": "BAR - one specified item"
+                "Personal Accident": "25000",
+                "Public Liability": "",
+                "Sarsia Cover Limit": "500000",
+                "Cover Note": "BAR - one specified item"
             }
         },
         {
             "option": {
                 "coverName": "Trader Gold",
                 "totalPremium": "150",
-                "stockContentLmt": "75000",
+                "Stock & Content Limit": "75000",
                 "barLmt": "5000",
-                "paLmt": "25000",
-                "plLmt": "",
-                "sasriaLmt": "500000",
-                "coverNotes": "BAR - one specified item"
+                "Personal Accident": "25000",
+                "Public Liability": "",
+                "Sarsia Cover Limit": "500000",
+                "Cover Note": "BAR - one specified item"
             }
         },
         {
             "option": {
                 "coverName": "Trader Platinum",
                 "totalPremium": "220",
-                "stockContentLmt": "100000",
+                "Stock & Content Limit": "100000",
                 "barLmt": "5000",
-                "paLmt": "50000",
-                "plLmt": "250000",
-                "sasriaLmt": "500000",
-                "coverNotes": "BAR - one specified item"
+                "Personal Accident": "50000",
+                "Public Liability": "250000",
+                "Sarsia Cover Limit": "500000",
+                "Cover Note": "BAR - one specified item"
             }
         },
         {
             "option": {
                 "coverName": "Trader Diamond",
                 "totalPremium": "300",
-                "stockContentLmt": "150000",
+                "Stock & Content Limit": "150000",
                 "barLmt": "5000",
-                "paLmt": "50000",
-                "plLmt": "500000",
-                "sasriaLmt": "500000",
-                "coverNotes": "BAR - one specified item"
+                "Personal Accident": "50000",
+                "Public Liability": "500000",
+                "Sarsia Cover Limit": "500000",
+                "Cover Note": "BAR - one specified item"
             }
         }
     ],
@@ -66,60 +66,60 @@ const coverOptsByTypes = {
             "option": {
                 "coverName": "Artisan Bronze",
                 "totalPremium": "70",
-                "stockContentLmt": "10000",
+                "Stock & Content Limit": "10000",
                 "barLmt": "3000",
-                "paLmt": "25000",
-                "plLmt": "",
-                "sasriaLmt": "500000",
-                "coverNotes": "BAR - one specified item"
+                "Personal Accident": "25000",
+                "Public Liability": "",
+                "Sarsia Cover Limit": "500000",
+                "Cover Note": "BAR - one specified item"
             }
         },
         {
             "option": {
                 "coverName": "Artisan Silver",
                 "totalPremium": "100",
-                "stockContentLmt": "20000",
+                "Stock & Content Limit": "20000",
                 "barLmt": "5000",
-                "paLmt": "25000",
-                "plLmt": "",
-                "sasriaLmt": "500000",
-                "coverNotes": "BAR - one specified item"
+                "Personal Accident": "25000",
+                "Public Liability": "",
+                "Sarsia Cover Limit": "500000",
+                "Cover Note": "BAR - one specified item"
             }
         },
         {
             "option": {
                 "coverName": "Artisan Gold",
                 "totalPremium": "150",
-                "stockContentLmt": "20000",
+                "Stock & Content Limit": "20000",
                 "barLmt": "5000",
-                "paLmt": "25000",
-                "plLmt": "250000",
-                "sasriaLmt": "500000",
-                "coverNotes": "BAR - one specified item"
+                "Personal Accident": "25000",
+                "Public Liability": "250000",
+                "Sarsia Cover Limit": "500000",
+                "Cover Note": "BAR - one specified item"
             }
         },
         {
             "option": {
                 "coverName": "Artisan Platinum",
                 "totalPremium": "220",
-                "stockContentLmt": "30000",
+                "Stock & Content Limit": "30000",
                 "barLmt": "10000",
-                "paLmt": "50000",
-                "plLmt": "250000",
-                "sasriaLmt": "500000",
-                "coverNotes": "BAR - two specified items at R5k each"
+                "Personal Accident": "50000",
+                "Public Liability": "250000",
+                "Sarsia Cover Limit": "500000",
+                "Cover Note": "BAR - two specified items at R5k each"
             }
         },
         {
             "option": {
                 "coverName": "Artisan Diamond",
                 "totalPremium": "300",
-                "stockContentLmt": "40000",
+                "Stock & Content Limit": "40000",
                 "barLmt": "15000",
-                "paLmt": "50000",
-                "plLmt": "500000",
-                "sasriaLmt": "500000",
-                "coverNotes": "BAR - three specified items at R5k each"
+                "Personal Accident": "50000",
+                "Public Liability": "500000",
+                "Sarsia Cover Limit": "500000",
+                "Cover Note": "BAR - three specified items at R5k each"
             }
         }
     ],
@@ -128,60 +128,60 @@ const coverOptsByTypes = {
             "option": {
                 "coverName": "Services Bronze",
                 "totalPremium": "70",
-                "stockContentLmt": "10000",
+                "Stock & Content Limit": "10000",
                 "barLmt": "3000",
-                "paLmt": "25000",
-                "plLmt": "",
-                "sasriaLmt": "500000",
-                "coverNotes": "BAR - one specified item"
+                "Personal Accident": "25000",
+                "Public Liability": "",
+                "Sarsia Cover Limit": "500000",
+                "Cover Note": "BAR - one specified item"
             }
         },
         {
             "option": {
                 "coverName": "Services Silver",
                 "totalPremium": "100",
-                "stockContentLmt": "20000",
+                "Stock & Content Limit": "20000",
                 "barLmt": "5000",
-                "paLmt": "25000",
-                "plLmt": "",
-                "sasriaLmt": "500000",
-                "coverNotes": "BAR - one specified item"
+                "Personal Accident": "25000",
+                "Public Liability": "",
+                "Sarsia Cover Limit": "500000",
+                "Cover Note": "BAR - one specified item"
             }
         },
         {
             "option": {
                 "coverName": "Services Gold",
                 "totalPremium": "150",
-                "stockContentLmt": "20000",
+                "Stock & Content Limit": "20000",
                 "barLmt": "5000",
-                "paLmt": "25000",
-                "plLmt": "250000",
-                "sasriaLmt": "500000",
-                "coverNotes": "BAR - one specified item"
+                "Personal Accident": "25000",
+                "Public Liability": "250000",
+                "Sarsia Cover Limit": "500000",
+                "Cover Note": "BAR - one specified item"
             }
         },
         {
             "option": {
                 "coverName": "Services Platinum",
                 "totalPremium": "220",
-                "stockContentLmt": "30000",
+                "Stock & Content Limit": "30000",
                 "barLmt": "10000",
-                "paLmt": "50000",
-                "plLmt": "250000",
-                "sasriaLmt": "500000",
-                "coverNotes": "BAR - two specified items at R5k each"
+                "Personal Accident": "50000",
+                "Public Liability": "250000",
+                "Sarsia Cover Limit": "500000",
+                "Cover Note": "BAR - two specified items at R5k each"
             }
         },
         {
             "option": {
                 "coverName": "Services Diamond",
                 "totalPremium": "300",
-                "stockContentLmt": "40000",
+                "Stock & Content Limit": "40000",
                 "barLmt": "15000",
-                "paLmt": "50000",
-                "plLmt": "500000",
-                "sasriaLmt": "500000",
-                "coverNotes": "BAR - three specified items at R5k each"
+                "Personal Accident": "50000",
+                "Public Liability": "500000",
+                "Sarsia Cover Limit": "500000",
+                "Cover Note": "BAR - three specified items at R5k each"
             }
         }
     ]

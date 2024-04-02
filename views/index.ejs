@@ -8,8 +8,13 @@
 </head>
 
 <body>
+    <h2> Avaliable Channels</h2>
+    <% Object.entries(availableChannels).forEach(([key, value]) => { %>
+        <h3> - <a href="<%=value.route%>/"><%= value.title %></a></h3>
+    <% }) %>
+    <h2>Routes</h2>
     <% Object.entries(avaliableRoutes).forEach(([key, value]) => { %>
-        <h2><%= value.title %></h2>
+        <h4>  <%= value.title %></h4>
         <ul>
             <li>Method: <%= value.method %></li>
             <li>Description: <%= value.description %></li>

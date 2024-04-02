@@ -1,7 +1,7 @@
 <%- include('header') %>
 
 <body>
-    <form action="/<%= channelName.route %>/cover-options" method="POST">
+    <form action="/<%= channelInfo.route %>/cover-options" method="POST">
         <div class="cover-options-class">
             <% for (let i=0; i < coverOpts.length; i++) { %>
                 <input type="radio" id="<%= coverOpts[i].option.coverName %>" name="coverOpt"

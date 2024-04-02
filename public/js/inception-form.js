@@ -64,6 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function idPassportLabelHandler() {
         const label = document.getElementById('id_number_label');
         label.textContent = this.id === 'sa_citizen' ? 'What is your ID number?' : 'What is your Passport Number?';
+        const idNumber = document.getElementById('id_number');
+        idNumber.placeholder = this.id === 'sa_citizen' ? 'ID Number' : 'Passport Number';
     }
 
     function hasAnsweredAllQuestions(pageNumber) {

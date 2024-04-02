@@ -1,0 +1,369 @@
+:root {
+    --primary-color: #013a81;
+    --secondary-color: #ffc222;
+}
+
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+    font-family: 'Arial', sans-serif;
+    color: var(--primary-color);
+}
+
+h1 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+/* PAGE CONTAINER */
+.inception-form-page {
+    width: 97%;
+    /* max-width: 600px; */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+}
+
+/* HEADER CONTAINER */
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 400px;
+    padding-top: 2vh;
+    margin: 0 auto;
+    width: 80%;
+    /* min-height: 23vh; */
+}
+
+.header-container img {
+    width: 90%;
+    max-width: 100%;
+}
+
+.header-container h1 {
+    margin: 0;
+    margin-block-start: 2vh;
+    margin-block-end: 2vh;
+    font-size: 1.8em;
+}
+
+/* QUESTIONS FORM CONTAINER */
+.questions-form-container {
+    display: flex;
+    flex-grow: 1;
+    margin: 0 auto 3vw auto;
+    width: 92vw;
+    max-width: 700px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* QUESTIONS PAGE CLASS*/
+.question-page-container {
+    width: 84vw;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+.question-page-container.active {
+    display: block;
+}
+
+.question-page-container h2 {
+    margin-block-start: 0.9em;
+    margin-block-end: 0;
+    padding-left: 2px;
+}
+
+.question-page-container h3 {
+    margin-block-end: 0;
+    padding-left: 2px;
+}
+
+.question-page-container h4 {
+    margin-block-start: 0.9em;
+    margin-block-end: 0;
+    padding-left: 2px;
+    font-weight: 400;
+}
+
+.question-page-container p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-left: 2px;
+}
+
+.question-page-container hr {
+    width: 20%;
+    align-self: flex-start;
+    margin: 2vh 5px;
+}
+
+/* QUESTION CONTAINER*/
+.question-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.question-container label {
+    font-size: 1em;
+    margin: 0.5vh 0 1vh 0;
+    padding-left: 2px;
+}
+
+.question-container input[type=text],
+.question-container select,
+.question-container input[type=tel],
+.question-container textarea {
+    width: 100%;
+    padding: 0 15px;
+    height: 45px;
+    margin-bottom: 10px;
+    background-color: #f0f0f0af;
+    border: 1px solid #ffc222;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1.2em;
+    color: var(--primary-color);
+}
+
+.question-container ::placeholder {
+    color: var(--primary-color);
+    font-size: inherit;
+    font-family: inherit;
+}
+
+/* COVER OPTIONS */
+/* Hide the radio button visually but remain accessible for screen readers */
+.cover-option-div {
+    position: relative;
+    width: 100%;
+    /* padding: 10px 15px; */
+    height: 45px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover-options input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    left: -9999px;
+}
+
+.cover-options label {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 10px 15px;
+    background-color: #f0f0f0af;
+    border: 1px solid #ffc222;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1.2em;
+    color: var(--primary-color);
+}
+
+.cover-options input[type="radio"]:checked+label {
+    background-color: var(--secondary-color);
+    border-color: VAR(--secondary-color);
+}
+
+.cover-options label:hover {
+    background-color: #0057b33a;
+}
+
+.cover-options label::after {
+    content: "⌄";
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: inherit;
+}
+
+/* SINGLE SELECTION 2 RADIO BUTTONS - CITIZENSHIP */
+.two-radio-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 45px;
+    margin-bottom: 10px;
+}
+
+.single-select-checkbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0af;
+    border: 1px solid #ffc222;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1.2em;
+    color: var(--primary-color);
+    width: 40vw;
+}
+
+.single-select-checkbox input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    left: -9999px;
+}
+
+.single-select-checkbox label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-weight: 600;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+
+.single-select-checkbox input[type="radio"]:checked+label {
+    background-color: #ffc222;
+    border-color: #ffc222;
+    color: black;
+}
+
+
+/* PREVIOUS, NEXT, SUBMIT */
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2vh;
+    height: 45px;
+}
+
+.btn-container #submit_btn,
+#prev_btn {
+    display: none;
+}
+
+button {
+    background-color: #013a81;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px 5px 15px 5px;
+    font-size: 1.2em;
+    width: 40vw;
+    height: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* MEDIA QUERIES */
+@media screen and (max-height:700px) {
+    .header-container {
+        width: 90%;
+    }
+
+    .header-container img {
+        width: 80%;
+    }
+
+    .header-container h1 {
+        font-size: 1.6em;
+        margin-block-start: 2vh;
+        margin-block-end: 1.5vh;
+    }
+}
+
+@media screen and (max-width:380px) {
+    .header-container {
+        width: 90%;
+    }
+
+    .header-container img {
+        width: 80%;
+    }
+
+    .header-container h1 {
+        font-size: 1.6em;
+    }
+}
+
+@media screen and (min-width: 785px) {
+    .questions-form-container {
+        margin: 0 auto 23.4px auto;
+        width: 700px;
+    }
+
+    .question-page-container {
+        width: 700px;
+    }
+
+    .single-select-checkbox {
+        width: 313px;
+    }
+
+    button {
+        width: 303px;
+    }
+
+    .question-container input[type=text],
+    .question-container select,
+    .question-container input[type=tel],
+    .question-container textarea {
+        width: 650px;
+        align-self: center;
+    }
+
+    .question-container label {
+        font-size: 1em;
+        margin: 5.43px 0 10.85px 25px;
+        padding: 2px;
+    }
+
+    .question-page-container hr {
+        width: 20%;
+        align-self: flex-start;
+        margin: 21.75px 5px 21.75px 25px;
+    }
+
+    .question-page-container h2, h3, h4, p{
+        margin: 21.75px 0 0 25px;
+    }
+    .cover-options {
+        margin: 21.75px 0 0 25px;
+    }
+
+    .single-select-checkbox {}
+}

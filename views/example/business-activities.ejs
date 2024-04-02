@@ -1,7 +1,7 @@
 <%- include('header') %>
 <body>
     <h1>TEST</h1>
-    <form action="/<%= channelName.route %>/business-activities" method="POST">
+    <form action="/<%= channelInfo.route %>/business-activities" method="POST">
         <label for="bisActDropdown">Choose a Business Activity:</label>
         <select id="bisAct" name="bisAct">
             <!-- Iterate through the key's of the obj -->
@@ -14,4 +14,4 @@
         <button type="submit">Submit</button>
     </form>
 </body>
-</html>
+</html>  

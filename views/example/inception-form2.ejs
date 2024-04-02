@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/form2.css">
+    <title>Emerging Business Insurance</title>
+</head>
+
+<body>
+    <div class="inception-form-page">
+        <div class="header-container">
+            <img id="santamLogo" src="imgs/Logo.png" alt="Santam Logo">
+            <h1>Emerging Business Insurance</h1>
+        </div>
+        <div class="questions-form-container">
+            <form action="">
+                <div id="page1" class="question-page-container active">
+                    <h2>Business Details</h2>
+                    <hr>
+                    <div id="business-name-div" class="question-container">
+                        <label for="business_name">What is your business name?</label>
+                        <input type="text" name="business_name" id="business_name" placeholder="Business Name" required>
+                    </div>
+                    <div id="business-address-div" class="question-container">
+                        <label for="business_address">What is your business address?</label>
+                        <input type="text" name="business_address" id="business_address" placeholder="Business Address"
+                            required>
+                    </div>
+                    <div id="business-activity-div" class="question-container">
+                        <label for="bisActDropdown">Select a Business Activity</label>
+                        <select id="bisAct" name="bisAct">
+                            <!-- SET DEFAULT -->
+                            <option value="" disabled selected>Business Activity</option>
+                            <!-- Iterate through the key's of the obj -->
+                            <% Object.keys(bisActsByType).forEach((key)=> { %>
+                                <option value="<%= key %>">
+                                    <%= key %>
+                                </option>
+                                <% }) %>
+                        </select>
+                        <!-- Add cell-number parameter to the form -->
+                        <input name="cell-number" id="cell-number" value="<%= cellNumber %>" hidden>
+                    </div>
+                </div>
+                <div id="page2" class="question-page-container">
+                    <h2>Cover Options</h2>
+                    <h4>Select an option to learn more</h4>
+                    <hr>
+                    <div id="question4" class="question-container cover-options"></div>
+                    <div class="cover-details"></div>
+                </div>
+                <div id="page3" class="question-page-container">
+                    <h2>Personal Details</h2>
+                    <hr>
+                    <div id="question5" class="question-container">
+                        <label for="first_name">What is your first name?</label>
+                        <input type="text" name="first_name" id="first_name" placeholder="First Name" required>
+                    </div>
+                    <div id="question6" class="question-container">
+                        <label for="last_name">What is your last name?</label>
+                        <input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
+                    </div>
+                    <div id="question7" class="question-container">
+                        <label>Are you a South African Citizen?</label>
+                        <div class="two-radio-btn-container">
+                            <div class="single-select-checkbox"> 
+                                <input type="radio" id="sa_citizen" name="citizenship" value="sa_citizen">
+                                <label for="sa_citizen">Yes</label>
+                            </div>
+                            <div class="single-select-checkbox">
+                                <input type="radio" id="foreign_citizen" name="citizenship" value="foreign_citizen">
+                                <label for="foreign_citizen">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="question8" class="question-container">
+                        <label for="id_number" id="id_number_label">What is your ID number?</label>
+                        <input type="text" inputmode="numeric" pattern="\d*" name="id_number" id="id_number"
+                            placeholder="ID Number" required>
+                    </div>
+                </div>
+                <div id="question7" class="question-container">
+                    <input type="tel" pattern="\+?\d*" name="cell_number" id="cell_number" value="<%= cellNumber %>"
+                        hidden>
+                </div>
+            </form>
+            <input type="hidden" id="bisActsByType" value='<%- JSON.stringify(bisActsByType) %>'>
+            <input type="hidden" id="coverOptsByTypes" value='<%- JSON.stringify(coverOptsByTypes) %>'>
+            <div class="btn-container">
+                <button id="prev_btn">Previous</button>
+                <button id="next_btn">Next</button>
+                <button id="submit_btn">Submit</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/inception-form2.js"></script>
+</body>
+
+</html>
