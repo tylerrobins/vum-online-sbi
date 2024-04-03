@@ -40,7 +40,10 @@
                                 </option>
                                 <% }) %>
                         </select>
-                        <input name="cell-number" id="cell-number" value="<%= cellNumber %>" hidden>
+                    </div>
+                    <div id="business-activity-other-div" class="question-container hidden">
+                        <label for="business_address">What is your business activity?</label>
+                        <input type="text" name="business_activity" id="business_activity" placeholder="Business Activity">
                     </div>
                 </div>
                 <!-- COVER OPTIONS -->
@@ -106,8 +109,7 @@
                     </div>
                 </div>
                 <div id="cell-number-div" class="question-container">
-                    <input type="tel" pattern="\+?\d*" name="cell_number" id="cell_number" value="<%= cellNumber %>"
-                        hidden>
+                    <input name="cell-number" id="cell-number" value="<%= cellNumber %>" hidden>
                 </div>
             </form>
             <input type="hidden" id="bisActsByType" value='<%- JSON.stringify(bisActsByType) %>'>

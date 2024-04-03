@@ -102,7 +102,8 @@ const bisActsByType = {
         "Tailor":"Services",
         "Tour Operator":"Services",
         "Waste Pickers":"Services",
-        "Waste Removal":"Services"
+        "Waste Removal":"Services",
+        "Other":"Other"
 };
 
 module.exports = bisActsByType;

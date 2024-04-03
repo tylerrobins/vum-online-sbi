@@ -36,8 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // });
 
     const bisActDropdown = document.getElementById('bisAct');
-    bisActDropdown.addEventListener('change', function () {
-        coverOptionSelection = coverOptsByTypes[bisActsByType[this.value]];
+    bisActDropdown.addEventListener('change', () => {
+        const otherBisAct = document.getElementById('business-activity-other-div');
+        if (this.value === 'Other') {
+            otherBisAct.classList.remove('hidden');
+        } else {
+            coverOptionSelection = coverOptsByTypes[bisActsByType[this.value]];
+            otherBisAct.classList.add('hidden');
+        }
     });
 
     document.querySelectorAll('.single-select-checkbox input[type="radio"]').forEach(radio => {
@@ -125,7 +131,7 @@ function updateCoverOptions(coverOpts, onSelection) {
             });
         });
     } else {
-        container.textContent = 'No cover options available for the selected business activity.';
+        container.textContent = 'Please select a business activity on the previous page to see cover options.';
     }
 }
 // RESTORES THE ORIGINAL ORDER OF THE COVER OPTIONS ON DESELECT
@@ -191,10 +197,10 @@ function updateDeviceInfoBaseOnCover(barLmtVar) {
     }
 }
 
-    // HELPER FUNCTIONS
-    // CONVERTS AMOUNTS TO RAND STRING
-    function processAmountsToString(amount) {
-        let result = amount.toString();
-        result = result.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-        return 'R ' + result;
-    }
+// HELPER FUNCTIONS
+// CONVERTS AMOUNTS TO RAND STRING
+function processAmountsToString(amount) {
+    let result = amount.toString();
+    result = result.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return 'R ' + result;
+}
