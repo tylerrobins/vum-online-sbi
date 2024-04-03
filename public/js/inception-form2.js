@@ -18,12 +18,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     };
 
+    const bisActDropdown = document.getElementById('bisAct');
+    bisActDropdown.addEventListener('change', function() {
+        const otherBisAct = document.getElementById('business-activity-other-div');
+        if (this.value === 'Other') {
+            otherBisAct.classList.remove('hidden');
+        } else {
+            coverOptionSelection = coverOptsByTypes[bisActsByType[this.value]];
+            otherBisAct.classList.add('hidden');
+        }
+    });
+
     buttons.prevBtn.addEventListener('click', () => {
         currentPage = updateQuestionPage(buttons, currentPage, -1);
     });
     buttons.nextBtn.addEventListener('click', () => {
         // hasAnsweredAllQuestions(currentPage) && updateQuestion(1); //UNCOMMENT FOR LIVE
         if (currentPage === 1) {
+            console.log('PAGE 1')
             updateCoverOptions(coverOptionSelection, (selectedBarLmt) => {
                 barLmt = selectedBarLmt;
             });
@@ -35,16 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //     hasAnsweredAllQuestions(currentPage) && submitForm();
     // });
 
-    const bisActDropdown = document.getElementById('bisAct');
-    bisActDropdown.addEventListener('change', () => {
-        const otherBisAct = document.getElementById('business-activity-other-div');
-        if (this.value === 'Other') {
-            otherBisAct.classList.remove('hidden');
-        } else {
-            coverOptionSelection = coverOptsByTypes[bisActsByType[this.value]];
-            otherBisAct.classList.add('hidden');
-        }
-    });
+    
 
     document.querySelectorAll('.single-select-checkbox input[type="radio"]').forEach(radio => {
         radio.addEventListener('change', idPassportLabelHandler);
@@ -68,6 +71,7 @@ function updateQuestionPage(btn, currentPage, direction) {
 // BUILDS THE COVER OPTIONS
 // MAIN FUNCTION THAT RUNS
 function updateCoverOptions(coverOpts, onSelection) {
+    console.log('Updating cover options')
     let barLmt = '';
     const container = document.querySelector('.cover-options');
     const detailsContainer = document.querySelector('.cover-details'); // Assume there's a container for details
@@ -76,7 +80,7 @@ function updateCoverOptions(coverOpts, onSelection) {
 
     // Keep track of the original order of radio buttons
     const elements = [];
-
+    console.log(coverOpts)
     if (coverOpts && coverOpts.length > 0) {
         coverOpts.forEach((opt) => {
             const coverName = opt.option.coverName;
